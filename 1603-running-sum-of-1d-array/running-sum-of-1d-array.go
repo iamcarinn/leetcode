@@ -1,9 +1,10 @@
 func runningSum(nums []int) []int {
-    size := len(nums) + 1
+    size := len(nums)
     numsSum := make([]int, size)
-
-    for i := range nums {
-        numsSum[i+1] = numsSum[i] + nums[i]
+    numsSum[0] = nums[0]
+    
+    for i := 0; i < size - 1; i++ {
+        numsSum[i+1] = numsSum[i] + nums[i+1]
     }
-    return numsSum[1:]
+    return numsSum
 }
