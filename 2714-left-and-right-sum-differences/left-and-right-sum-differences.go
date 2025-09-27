@@ -1,7 +1,7 @@
 func leftRightDifference(nums []int) []int {
     size := len(nums)
-    leftSum := make([]int, size)   // 0 0 0 0
-    rightSum := make([]int, size)  // 0 0 0 0
+    leftSum := make([]int, size)
+    rightSum := make([]int, size)
     result := make([]int, size)
 
     for i := 1; i < size; i++ {
