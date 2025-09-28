@@ -14,7 +14,7 @@ func findMiddleIndex(nums []int) int {
     }
 
     for i := range nums {
-        left_sum := prefixSum[i]       // от 0 до i-1)
+        left_sum := prefixSum[i]       // от 0 до i-1
         right_sum := suffixSum[i+1]    // от i+1 до конца
 
         if left_sum == right_sum {
