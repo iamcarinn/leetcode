@@ -1,6 +1,3 @@
-
-
-
 func findMiddleIndex(nums []int) int {
     prefixSum := make([]int, len(nums)+1)
     suffixSum := make([]int, len(nums)+1)
