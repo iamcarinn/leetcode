@@ -8,10 +8,10 @@ func getMaximumXor(nums []int, maximumBit int) []int {
 
     maxNum := (1 << maximumBit) - 1
 
-    ans := make([]int, len(nums))
-    for i := range ans {
-        ans[i] = prefix_xor[len(nums) - i - 1] ^ maxNum
+    res := make([]int, len(nums))
+    for i := range res {
+        res[i] = prefix_xor[len(nums) - i - 1] ^ maxNum
     }
 
-    return  ans
+    return  res
 }
