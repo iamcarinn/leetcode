@@ -3,20 +3,15 @@ func answerQueries(nums []int, queries []int) []int {
     m := len(queries)
     answer := make([]int, m)
 
-    // Сортируем nums
+    // Сортируем nums, чтобы одти от меньших
     sort.Ints(nums)
 
-    // Считаем префиксные суммы
+    // Находим префиксные суммы
     prefix_sum := make([]int, n + 1)
     prefix_sum[0] = 0
     for i := range nums {
         prefix_sum[i+1] = prefix_sum[i] + nums[i]
     }
-    // [ 1 2 4 5]
-    // [ 0 1 3 7 12]
-
-
-
 
     // Для каждого queries[i]
     for i := range queries {
