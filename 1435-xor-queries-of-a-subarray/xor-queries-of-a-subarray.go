@@ -9,7 +9,7 @@ func xorQueries(arr []int, queries [][]int) []int {
     ans := make([]int, q)
     for i := range queries {
         left, right := queries[i][0], queries[i][1]
-        ans[i] = prefix_sum[right+1] ^ prefix_sum[left]
+        ans[i] = prefix_sum[right+1] ^ prefix_sum[left] // все, что идет до left - самоуничтожается
     }
     return ans
 }
