@@ -10,5 +10,4 @@ func minStartValue(nums []int) int {
     }
 
     return 1 - minSum
-    
 }
