@@ -18,7 +18,7 @@ func answerQueries(nums []int, queries []int) []int {
 
 
 
-    // Ищем максимальную сумму, близкую к числу в массиве queries
+    // Для каждого queries[i]
     for i := range queries {
         lenOK := 0
         for lenOK+1 <= n && prefix_sum[lenOK+1] <= queries[i] {
