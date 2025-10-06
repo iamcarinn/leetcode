@@ -23,7 +23,4 @@ func answerQueries(nums []int, queries []int) []int {
     }
 
     return answer
-
-    
-
 }
