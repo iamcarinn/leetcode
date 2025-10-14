@@ -1,7 +1,6 @@
 func shortestSubarray(nums []int, k int) int {
     n := len(nums)
-
-    prefix_sum := make([]int, n + 1)
+    prefix_sum := make([]int, n+1)
     for i := range nums {
         prefix_sum[i+1] = prefix_sum[i] + nums[i]
     }
@@ -18,7 +17,7 @@ func shortestSubarray(nums []int, k int) int {
             deque = deque[1:]
         }
 
-        // Удаляем из конца deque все индексы, у которых prefix_sum больше или равен текущего
+        // Поддерживаем монотонность: удаляем из конца deque все индексы, у которых prefix_sum больше или равен текущего
         for len(deque) > 0 && prefix_sum[i] <= prefix_sum[deque[len(deque)-1]] {
             deque = deque[:len(deque)-1]
         }
@@ -30,5 +29,33 @@ func shortestSubarray(nums []int, k int) int {
         return -1
     }
     return result
-
 }
+
+
+// Time Limit Exceeded
+// func shortestSubarray(nums []int, k int) int {
+//     n := len(nums)
+
+//     prefix_sum := make([]int, n + 1)
+//     for i := range nums {
+//         prefix_sum[i+1] = prefix_sum[i] + nums[i]
+//     }
+
+//     ans := n+1
+
+//     for i := 0; i <= n; i++ {
+//         for j := i + 1; j <= n; j++ {
+//             if prefix_sum[j] - prefix_sum[i] >= k {
+//                 if ans > j - i {
+//                     ans = j - i
+//                 }
+//             }
+//         } 
+//     }
+
+//     if ans == n+1 {
+//         return -1
+//     }
+    
+//     return ans
+// }
